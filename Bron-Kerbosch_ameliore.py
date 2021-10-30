@@ -9,7 +9,7 @@ def version_ameliore(graphe):
   r = set()
   x = set()
   cliques = []
-  for v in degeneracy_ordering(graphe):
+  for v in Degenerescence(graphe):
     sommet = graphe[v]
     version_ameliore_avec_pivot(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
     p.remove(v)
@@ -28,7 +28,7 @@ def version_ameliore_avec_pivot(graphe, r, p, x, cliques):
       p.remove(v)
       x.add(v)
 
-def degeneracy_ordering(graphe):
+def Degenerescence(graphe):
   ordering = []
   ordering_set = set()
   degrees = defaultdict(lambda : 0)
@@ -84,5 +84,5 @@ G2 = {
         "G": ["B","E","I"]
     }
 
-# print(version_ameliore(G))
+print(version_ameliore(G))
 # print(version_ameliore(G2))

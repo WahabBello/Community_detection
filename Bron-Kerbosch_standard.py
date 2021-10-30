@@ -2,20 +2,23 @@
 # au format liste d'adjacence, un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
 # https://en.wikipedia.org/wiki/Bron-Kerbosch_algorithm
 
-from collections import defaultdict
+# from collections import defaultdict
 
-def version_standard(graphe):
-  p = set(graphe.keys())
-  r = set()
-  x = set()
-  cliques = []
-  for v in degeneracy_ordering(graphe):
-    sommet = graphe[v]
-    version_standard_avec_pivot(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
-    p.remove(v)
-    x.add(v)
+# Ici p = set(graphe.keys())
+def version_standard(graphe, p, r= set(), x = set(), cliques = []):
+  p = p
+  r = r
+  x = x
+  cliques = cliques
+  if len(p) == 0 and len(x) == 0:
+    cliques.append(r)
+  else:
+    for v in p:
+      sommet = graphe[v]
+      cliques = version_standard(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
+      p.remove(v)
+      x.add(v)
   return sorted(cliques)
-  # return sorted(cliques, lambda x: len(x))
 
 def version_standard_avec_pivot(graphe, r, p, x, cliques):
   if len(p) == 0 and len(x) == 0:
@@ -24,45 +27,11 @@ def version_standard_avec_pivot(graphe, r, p, x, cliques):
     u = next(iter(p.union(x)))
     for v in p.difference(graphe[u]):
       sommet = graphe[v]
-      version_standard_avec_pivot(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
+      cliques = version_standard_avec_pivot(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
       p.remove(v)
       x.add(v)
+  return sorted(cliques)
 
-def degeneracy_ordering(graphe):
-  ordering = []
-  ordering_set = set()
-  degrees = defaultdict(lambda : 0)
-  degen = defaultdict(list)
-  max_deg = -1
-
-  for v in graphe:
-    deg = len(graphe[v])
-    degen[deg].append(v)
-    degrees[v] = deg
-    if deg > max_deg:
-      max_deg = deg
-
-  while True:
-    i = 0
-    while i <= max_deg:
-      if len(degen[i]) != 0:
-        break
-      i += 1
-    else:
-      break
-    v = degen[i].pop()
-    ordering.append(v)
-    ordering_set.add(v)
-    for w in graphe[v]:
-      if w not in ordering_set:
-        deg = degrees[w]
-        degen[deg].remove(w)
-        if deg > 0:
-          degrees[w] -= 1
-          degen[deg - 1].append(w)
-
-  ordering.reverse()
-  return ordering
 
 G = {   
         1: [2,3,4],
@@ -83,6 +52,36 @@ G2 = {
         "F": ["B","C","E"],
         "G": ["B","E","I"]
     }
-
-# print(version_standard(G))
+    
+# test = version_standard(G, set(G.keys()))
+test_pivot = version_standard_avec_pivot(G, set(G.keys()), set(), set(), [])
+print(test_pivot)
 # print(version_standard(G2))
+
+
+# def version_standard_aux(graphe, r, p, x, cliques):
+#   p = p
+#   r = r
+#   x = x
+#   cliques = cliques
+#   if len(p) == 0 and len(x) == 0:
+#     cliques.append(r)
+#   else:
+#     for v in p:
+#       sommet = graphe[v]
+#       version_standard_aux(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
+#       p.remove(v)
+#       x.add(v)
+#   return sorted(cliques)
+
+# def version_standard(graphe):
+#   p = set(graphe.keys())
+#   r = set()
+#   x = set()
+#   cliques = []
+#   for v in p:
+#     sommet = graphe[v]
+#     cliques = version_standard_aux(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
+#     p.remove(v)
+#     x.add(v)
+#   return sorted(cliques)
