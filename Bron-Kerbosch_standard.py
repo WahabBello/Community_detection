@@ -1,36 +1,32 @@
 # Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. Le graphe d'entrée est ici 
 # au format liste d'adjacence, un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
-# https://en.wikipedia.org/wiki/Bron-Kerbosch_algorithm
 
-# from collections import defaultdict
 
-# Ici p = set(graphe.keys())
 def version_standard(graphe, p, r= set(), x = set(), cliques = []):
-  p = p
-  r = r
-  x = x
-  cliques = cliques
+  # print("R= ",r,"; P = ",p,"; X = ",x)
   if len(p) == 0 and len(x) == 0:
     cliques.append(r)
-  else:
-    for v in p:
-      sommet = graphe[v]
-      cliques = version_standard(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
-      p.remove(v)
-      x.add(v)
-  return sorted(cliques)
+    # print("Clique maximal =", cliques)
+    return
 
-def version_standard_avec_pivot(graphe, r, p, x, cliques):
+  for v in list(p):
+    sommet = set(graphe[v])
+    version_standard(graphe, p.intersection(sommet), r.union([v]), x.intersection(sommet), cliques)
+    p.remove(v)
+    x.add(v)
+  return cliques
+
+def version_standard_avec_pivot(graphe, p, r= set(), x = set(), cliques = []):
   if len(p) == 0 and len(x) == 0:
     cliques.append(r)
-  else:
-    u = next(iter(p.union(x)))
-    for v in p.difference(graphe[u]):
-      sommet = graphe[v]
-      cliques = version_standard_avec_pivot(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
-      p.remove(v)
-      x.add(v)
-  return sorted(cliques)
+  
+  pivot = next(iter(p.union(x))) if p else next(iter(r))
+  for v in p.difference(graphe[pivot]):
+    sommet = graphe[v]
+    version_standard_avec_pivot(graphe, p.intersection(sommet), r.union([v]), x.intersection(sommet), cliques)
+    p.remove(v)
+    x.add(v)
+  return cliques
 
 
 G = {   
@@ -52,36 +48,20 @@ G2 = {
         "F": ["B","C","E"],
         "G": ["B","E","I"]
     }
-    
+
+G3 = {   
+        1: [2,3],
+        2: [1,3,4],
+        3: [1,2],
+        4: [2]
+    }
+
+# version_standard(G, set(G.keys()))
+test = version_standard(G, set(G.keys()))
+# print(G[1])
 # test = version_standard(G, set(G.keys()))
-test_pivot = version_standard_avec_pivot(G, set(G.keys()), set(), set(), [])
+test_pivot = version_standard_avec_pivot(G, set(G.keys()))
+print(test)
 print(test_pivot)
 # print(version_standard(G2))
 
-
-# def version_standard_aux(graphe, r, p, x, cliques):
-#   p = p
-#   r = r
-#   x = x
-#   cliques = cliques
-#   if len(p) == 0 and len(x) == 0:
-#     cliques.append(r)
-#   else:
-#     for v in p:
-#       sommet = graphe[v]
-#       version_standard_aux(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
-#       p.remove(v)
-#       x.add(v)
-#   return sorted(cliques)
-
-# def version_standard(graphe):
-#   p = set(graphe.keys())
-#   r = set()
-#   x = set()
-#   cliques = []
-#   for v in p:
-#     sommet = graphe[v]
-#     cliques = version_standard_aux(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
-#     p.remove(v)
-#     x.add(v)
-#   return sorted(cliques)
