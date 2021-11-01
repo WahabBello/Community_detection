@@ -1,6 +1,5 @@
 # Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. Le graphe d'entrée est ici
 # au format liste d'adjacence, un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
-# https://en.wikipedia.org/wiki/Bron-Kerbosch_algorithm
 
 from collections import defaultdict
 
@@ -14,55 +13,54 @@ def version_ameliore(graphe):
     version_ameliore_avec_pivot(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
     p.remove(v)
     x.add(v)
-  return sorted(cliques)
-  # return sorted(cliques, lambda x: len(x))
+  return cliques
 
 def version_ameliore_avec_pivot(graphe, r, p, x, cliques):
   if len(p) == 0 and len(x) == 0:
     cliques.append(r)
   else:
-    u = next(iter(p.union(x)))
-    for v in p.difference(graphe[u]):
+    pivot = next(iter(p.union(x)))
+    for v in p.difference(graphe[pivot]):
       sommet = graphe[v]
       version_ameliore_avec_pivot(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
       p.remove(v)
       x.add(v)
 
 def Degenerescence(graphe):
-  ordering = []
-  ordering_set = set()
+  ordre = []
+  ordre_set = set()
   degrees = defaultdict(lambda : 0)
   degen = defaultdict(list)
-  max_deg = -1
+  deg_max = -1
 
   for v in graphe:
     deg = len(graphe[v])
     degen[deg].append(v)
     degrees[v] = deg
-    if deg > max_deg:
-      max_deg = deg
+    if deg > deg_max:
+      deg_max = deg
 
   while True:
     i = 0
-    while i <= max_deg:
+    while i <= deg_max:
       if len(degen[i]) != 0:
         break
       i += 1
     else:
       break
     v = degen[i].pop()
-    ordering.append(v)
-    ordering_set.add(v)
+    ordre.append(v)
+    ordre_set.add(v)
     for w in graphe[v]:
-      if w not in ordering_set:
+      if w not in ordre_set:
         deg = degrees[w]
         degen[deg].pop(w)
         if deg > 0:
           degrees[w] -= 1
           degen[deg - 1].append(w)
 
-  ordering.reverse()
-  return ordering
+  ordre.reverse()
+  return ordre
 
 G = {
         1: [2,3,4],
@@ -83,6 +81,11 @@ G2 = {
         "F": ["B","C","E"],
         "G": ["B","E","I"]
     }
-
+G3 = {   
+        1: [2,3],
+        2: [1,3,4],
+        3: [1,2],
+        4: [2]
+    }
 print(version_ameliore(G))
 print(version_ameliore(G2))
