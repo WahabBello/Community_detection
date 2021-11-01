@@ -1,4 +1,4 @@
-# Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. Le graphe d'entrée est ici 
+# Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. Le graphe d'entrée est ici
 # au format liste d'adjacence, un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
 # https://en.wikipedia.org/wiki/Bron-Kerbosch_algorithm
 
@@ -33,7 +33,7 @@ def version_standard_avec_pivot(graphe, r, p, x, cliques):
   return sorted(cliques)
 
 
-G = {   
+G = {
         1: [2,3,4],
         2: [1,3,4,5],
         3: [1,2,4],
@@ -43,7 +43,7 @@ G = {
         7: [5]
     }
 
-G2 = {   
+G2 = {
         "A": ["B"],
         "B": ["A","C","E","D","G"],
         "C": ["B","E","F","I"],
@@ -52,7 +52,7 @@ G2 = {
         "F": ["B","C","E"],
         "G": ["B","E","I"]
     }
-    
+
 # test = version_standard(G, set(G.keys()))
 test_pivot = version_standard_avec_pivot(G, set(G.keys()), set(), set(), [])
 print(test_pivot)

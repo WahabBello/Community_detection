@@ -1,4 +1,4 @@
-# Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. Le graphe d'entrée est ici 
+# Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. Le graphe d'entrée est ici
 # au format liste d'adjacence, un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
 # https://en.wikipedia.org/wiki/Bron-Kerbosch_algorithm
 
@@ -56,7 +56,7 @@ def Degenerescence(graphe):
     for w in graphe[v]:
       if w not in ordering_set:
         deg = degrees[w]
-        degen[deg].remove(w)
+        degen[deg].pop(w)
         if deg > 0:
           degrees[w] -= 1
           degen[deg - 1].append(w)
@@ -64,7 +64,7 @@ def Degenerescence(graphe):
   ordering.reverse()
   return ordering
 
-G = {   
+G = {
         1: [2,3,4],
         2: [1,3,4,5],
         3: [1,2,4],
@@ -74,7 +74,7 @@ G = {
         7: [5]
     }
 
-G2 = {   
+G2 = {
         "A": ["B"],
         "B": ["A","C","E","D","G"],
         "C": ["B","E","F","I"],
@@ -85,4 +85,4 @@ G2 = {
     }
 
 print(version_ameliore(G))
-# print(version_ameliore(G2))
+print(version_ameliore(G2))
