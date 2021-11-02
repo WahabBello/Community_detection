@@ -54,7 +54,7 @@ def Degenerescence(graphe):
     for w in graphe[v]:
       if w not in ordre_set:
         deg = degrees[w]
-        degen[deg].pop(w)
+        degen[deg].remove(w)
         if deg > 0:
           degrees[w] -= 1
           degen[deg - 1].append(w)
@@ -81,11 +81,11 @@ G2 = {
         "F": ["B","C","E"],
         "G": ["B","E","I"]
     }
-G3 = {   
+G3 = {
         1: [2,3],
         2: [1,3,4],
         3: [1,2],
         4: [2]
     }
 print(version_ameliore(G))
-print(version_ameliore(G2))
+#print(version_ameliore(G2))
