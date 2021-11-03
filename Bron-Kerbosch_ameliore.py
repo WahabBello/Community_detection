@@ -148,10 +148,10 @@ G3 = {
         4: [2]
     }
 print(version_ameliore(G))
-<<<<<<< HEAD
+
 #print(version_ameliore(G2))
-=======
+
 # test = Degenerescence(G)
 # print(test)
 # print(version_ameliore(G2))
->>>>>>> f2bd1b4e9609ba7fd2712fbae0d8f5016618a6c1
+

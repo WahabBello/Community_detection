@@ -1,6 +1,7 @@
-# Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. Le graphe d'entrée est ici
-# au format liste d'adjacence, un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
-
+"""
+Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. Le graphe d'entrée est ici
+au format liste d'adjacence, un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
+"""
 
 def version_standard_Sans_pivot(graphe, p, r= set(), x = set(), cliques = []):
 
