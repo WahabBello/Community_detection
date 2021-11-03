@@ -23,11 +23,11 @@ def Generate_Graph():
 
         for j in range(m):
 
-            choix_sommet = random.choice(List_Des_Sommet)   #Les voisins candidats
-            print("Noeud choisi : " + str(choix_sommet))
+            choix_sommet = random.choice(List_Des_Sommet)   #Les voisins candidats du nouveau sommet
+            print("Sommet choisi : " + str(choix_sommet))
             print("Liason  : " + str(i+3) + "--" + str(choix_sommet))
 
-            va = (m)/(List_Degre[k])
+            va = (m)/(List_Degre[k])       #Probabilité de l'apparution de l'arrete
 
             Sommet_Choisi.append(choix_sommet)
 
@@ -49,16 +49,12 @@ def Generate_Graph():
         #Mettre à jour le graphe avec le nouveau sommet
         Nvoisin = []
         for k in Sommet_Choisi:
-            print(k)
             for A in range(0, len(list(G.values()))):
                 if k==A:
                     print( list(G.values())[k-1] )
                     Nvoisin = list (G.values())[k-1]
 
             Nvoisin.append(i+3)
-            print(Nvoisin)
-
-
 
         print("*******************************************************")
         print("LE GRAPHE FINAL")
