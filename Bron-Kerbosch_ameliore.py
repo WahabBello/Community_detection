@@ -70,12 +70,12 @@ def Degenerescence(graphe,ordering=False,degeneracy=False):
     #degree distribution
     # print("subset =",subset,"et son type =",type(subset))
     D=get_degree_list(subset)
-    # print("D =",D,"et son type =",type(D))
+    print("D =",D,"et son type =",type(D))
     
     #initialize
     for i in range(1,max(D.keys())+1):
         output[i]=[]
-    # print("outpout =",output)
+    print("outpout =",output)
     #we initialize the current degree i to 0
     #because we want to keep track of 1-core to k-core
     i=0
@@ -90,14 +90,19 @@ def Degenerescence(graphe,ordering=False,degeneracy=False):
         
         #pick a random vertex with the minimum degree
         v=D[i].pop(0)
-        # print("v iteration=",v)
+        print("v iteration=",v)
         #checked and removed
         L.append(v)
         del subset[v]
-        # print("subset iteration=",subset)
+        
+        for k in subset.values():
+            if k == v:
+                subset.values().remove(v)
+        
+        print("subset iteration=",subset)
         # subset.remove(v)
         output[k].append(v)
-        # print("output iteration=",output)
+        print("output iteration=",output)
         
         #update the degree list
         D=get_degree_list(subset)   
