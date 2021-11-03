@@ -1,7 +1,9 @@
-# Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. Le graphe d'entrée est ici
-# au format liste d'adjacence, un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
+""" Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch dans sa version amelioré.
+    Cette version amelioré utilisé l'orde de degenerescence dans le but de potentiellement réduire l'itération.
+    Le graphe d'entrée est ici au format liste d'adjacence avec 
+    un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs. 
+"""
 
-# from collections import defaultdict
 import copy
 
 def version_ameliore(graphe):
@@ -9,7 +11,7 @@ def version_ameliore(graphe):
   r = set()
   x = set()
   cliques = []
-  for v in Degenerescence(graphe):
+  for v in degenerescence(graphe,True):
     sommet = graphe[v]
     version_ameliore_avec_pivot(graphe, r.union([v]), p.intersection(sommet), x.intersection(sommet), cliques)
     p.remove(v)
@@ -28,16 +30,20 @@ def version_ameliore_avec_pivot(graphe, r, p, x, cliques):
       x.add(v)
 
 
-#in this function, we create a dictionary
-#where the key is the degree and the value is the nodes
-def get_degree_list(graphe):
-    """create degree distribution"""
+
+def liste_degrees(graphe):
+    """ Dans cette fonction, nous allons créer un dictionnaire
+        où la clé est le degré et la valeur est une liste des noeuds ayant ce degré. 
+        
+        Paramètres
+            Une graphe au format liste d'adjacence. 
+
+        Renvoyer
+            Un dictionnaire trié par clé au lieu de la valeur dans l'ordre ascendant 
+    """
     
     D={}
     
-    #if the current degree hasnt been checked
-    #we create a new key under the current degree
-    #otherwise we append the new node into the list
     for i in graphe.keys():
         try:
             D[len(graphe[i])].append(i)
@@ -45,113 +51,82 @@ def get_degree_list(graphe):
         except KeyError:
             D[len(graphe[i])]=[i]
     
-    #dictionary is sorted by key instead of value in ascending order
     D=dict(sorted(D.items()))
     
     return D
 
-# -----------
 
-def Degenerescence(graphe,ordering=False,degeneracy=False):
-    """ ".
+def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
+    """"Un algorithme proposé par David W. Matula, et Leland L. Beck pour trouver le noyau k d'un graphe.
+        L'implémentation est basée sur leur pseudocode dans wikipedia intitulé "Degeneracy (graph theory)".
+        
+        Paramètres
+            - Une graphe au format liste d'adjacence. 
+            - optionnel : True si on veut la liste L dans l'ordre de dégénerescence
+            - optionnel : True si on veut la dégénerescence k 
+
+        Renvoyer
+            - (par defaut) Un dictionnaire avec le stockage des sommets regoupé de 1-core à k-core
+            - la liste L dans l'ordre de dégénerescence
+            - la dégénerescence k                           
     """
     
-    subset=copy.deepcopy(graphe)
+    copie_graphe=copy.deepcopy(graphe)
     
-    #k is the ultimate degeneracy
+    #k est l'ultime dégénérescence
     k=0
     
-    #denote L as the checked list
+    #L'ordre de dégénerescence
     L=[]
     
-    #denote output as the storage of vertices in 1-core to k-core
-    output={}
+    #Le stockage des sommets par groupe de 1-core à k-core
+    sortie={}
 
-    #degree distribution
-    # print("subset =",subset,"et son type =",type(subset))
-    D=get_degree_list(subset)
-    # print("D =",D,"et son type =",type(D))
+    #La distribution des degrées
+    D=liste_degrees(copie_graphe)
     
-    #initialize
-    for i in range(1,max(D.keys())+1):
-        output[i]=[]
-    # print("outpout =",output)
-    #we initialize the current degree i to 0
-    #because we want to keep track of 1-core to k-core
+    #initialisation
+    for i in range(1,max(D.keys())):
+        sortie[i]=[]
+
     i=0
 
     while D:
                 
-        #denote i as the minimum degree in the current graph
+        #Le degré minimum dans le graphe actuel
         i=list(D.keys())[0]
                         
-        #k denotes the degeneracy
+        #la dégénerescence k 
         k=max(k,i)
         
-        #pick a random vertex with the minimum degree
+        #Choisit un sommet avec le degré minimum
         v=D[i].pop(0)
-        # print("v iteration=",v)
-        #checked and removed
-        L.append(v)
-        del subset[v]
-        # print("subset iteration=",subset)
-        # subset.remove(v)
-        output[k].append(v)
-        # print("output iteration=",output)
         
-        #update the degree list
-        D=get_degree_list(subset)   
+        L.append(v)
+        del copie_graphe[v]
+        for liste in copie_graphe.values():
+            if v in liste:
+                liste.remove(v)
+
+        sortie[k].append(v)
+        
+        #Recalcul de La distribution des degrées
+        D=liste_degrees(copie_graphe)   
     
-    #start from -2 to 0
-    for ind in sorted(output.keys(),reverse=True)[1:]:
+    #Triage
+    for element in sorted(sortie.keys(),reverse=True)[1:]:
 
-        #remove empty k-core
-        if not output[ind+1]:
-            del output[ind+1]
+        if not sortie[element+1]:
+            del sortie[element+1]
 
-        #add vertices from high order core to low order core
         else:
-            output[ind]+=output[ind+1]
+            sortie[element]+=sortie[element+1]
     
-    #output depends on the requirement
-    if ordering:
+    #La sortie depend du besoin
+    if en_ordre:
         return L
-    elif degeneracy:
+    elif avec_degenerescense:
         return k
     else:
-        return output
-
-
-G = {
-        1: [2,3,4],
-        2: [1,3,4,5],
-        3: [1,2,4],
-        4: [1,2,3,5,6],
-        5: [2,4,7],
-        6: [4],
-        7: [5]
-    }
-
-G2 = {
-        "A": ["B"],
-        "B": ["A","C","E","D","G"],
-        "C": ["B","E","F","I"],
-        "D": ["B","E","H","I"],
-        "E": ["B","C","D","F","G","H","I"],
-        "F": ["B","C","E"],
-        "G": ["B","E","I"]
-    }
-G3 = {
-        1: [2,3],
-        2: [1,3,4],
-        3: [1,2],
-        4: [2]
-    }
-print(version_ameliore(G))
-
-#print(version_ameliore(G2))
-
-# test = Degenerescence(G)
-# print(test)
-# print(version_ameliore(G2))
+        return sortie
 
