@@ -1,22 +1,45 @@
-"""
-Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. Le graphe d'entrée est ici
-au format liste d'adjacence, un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
+""" Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. 
+    Le graphe d'entrée est ici au format liste d'adjacence, 
+    un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
 """
 
-def version_standard_Sans_pivot(graphe, p, r= set(), x = set(), cliques = []):
+def version_standard_sans_pivot(graphe, p, r= set(), x = set(), cliques = []):
+  """ Dans cette fonction, nous avons implémenté l'algorithme l'algorithme de Bron-Kerbosch sans un pivot.
+        L'implémentation est basée sur leur pseudocode proposé dans le document du papier [1]. 
+      
+      Paramètres
+          - pamam1: Une graphe au format liste d'adjacence. 
+          - pamam2: Une ensemble tel que "set(graphe.keys())"
+          - params(optionel) Il faut rien mettre
 
+      Renvoyer
+          Une liste contenant tous les cliques maximales
+  """
+  
   if len(p) == 0 and len(x) == 0:
     cliques.append(r)
 
   for v in list(p):
     sommet = set(graphe[v])
-    version_standard_Sans_pivot(graphe, p.intersection(sommet), r.union([v]), x.intersection(sommet), cliques)
+    version_standard_sans_pivot(graphe, p.intersection(sommet), r.union([v]), x.intersection(sommet), cliques)
     p.remove(v)
     x.add(v)
   return cliques
 
 
 def version_standard_avec_pivot(graphe, p, r= set(), x = set(), cliques = []):
+  """ Dans cette fonction, nous avons implémenté l'algorithme l'algorithme de Bron-Kerbosch avec un pivot.
+      L'implémentation est basée sur leur pseudocode proposé dans le document du papier [1].
+      L'ajout du pivot, nous permet de faire moins d'itérations dans la récursion.
+      
+      Paramètres
+          - pamam1: Une graphe au format liste d'adjacence. 
+          - pamam2: Une ensemble tel que "set(graphe.keys())"
+          - params(optionel) Il faut rien mettre
+
+      Renvoyer
+          Une liste contenant tous les cliques maximales
+  """
   if len(p) == 0 and len(x) == 0:
     cliques.append(r)
 
@@ -29,6 +52,7 @@ def version_standard_avec_pivot(graphe, p, r= set(), x = set(), cliques = []):
   return cliques
 
 
+<<<<<<< HEAD:Bron_Kerbosch_standard.py
 
 
 
@@ -41,4 +65,6 @@ def version_standard_avec_pivot(graphe, p, r= set(), x = set(), cliques = []):
 #test_pivot = version_standard_avec_pivot(G, set(G.keys()))
 #print(test_pivot)
 
+=======
+>>>>>>> ccd9b3f8d6cd444aae6e9af5bce949fc58a891d2:Bron-Kerbosch_standard.py
 
