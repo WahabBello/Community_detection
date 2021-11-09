@@ -52,4 +52,19 @@ def version_standard_avec_pivot(graphe, p, r= set(), x = set(), cliques = []):
   return cliques
 
 
+<<<<<<< HEAD:Bron_Kerbosch_standard.py
+
+
+
+#version_standard_Sans_pivot
+#test = version_standard_Sans_pivot(G, set(G.keys()))
+#print(test)
+
+
+# version_standard_Avec_pivot
+#test_pivot = version_standard_avec_pivot(G, set(G.keys()))
+#print(test_pivot)
+
+=======
+>>>>>>> ccd9b3f8d6cd444aae6e9af5bce949fc58a891d2:Bron-Kerbosch_standard.py
 

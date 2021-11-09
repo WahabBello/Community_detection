@@ -37,7 +37,6 @@ def liste_degrees(graphe):
         
         Paramètres
             Une graphe au format liste d'adjacence. 
-
         Renvoyer
             Un dictionnaire trié par clé au lieu de la valeur dans l'ordre ascendant 
     """
@@ -64,7 +63,6 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
             - Une graphe au format liste d'adjacence. 
             - optionnel : True si on veut la liste L dans l'ordre de dégénerescence
             - optionnel : True si on veut la dégénerescence k 
-
         Renvoyer
             - (par defaut) Un dictionnaire avec le stockage des sommets regoupé de 1-core à k-core
             - la liste L dans l'ordre de dégénerescence
@@ -129,4 +127,11 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
         return k
     else:
         return sortie
+
+
+
+
+    
+#print(version_ameliore(G))
+
 

@@ -27,10 +27,17 @@ def Generate_Graph2(n, p):
     return g
 
 
-#Main
-G = Generate_Graph2(10,0.5)
-pos = nx.spring_layout(G)
-nx.draw_networkx(G, pos)
-plt.title("Random Graph Generation ")
-plt.show()
+def Dessiner_Graphe(G):
+    pos = nx.spring_layout(G)
+    nx.draw_networkx(G, pos)
+    plt.title("Random Graph Generation ")
+    plt.show()
 
+#Main
+"""
+n = 5
+p = 0.3
+G = Generate_Graph2(n,p)
+
+Dessiner_Graphe(G)
+"""

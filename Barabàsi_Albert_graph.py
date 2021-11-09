@@ -45,15 +45,12 @@ def Generate_Graph():
         print("Liste des dégrés : " + str(List_Degre))
 
 
-
         #Mettre à jour le graphe avec le nouveau sommet
         Nvoisin = []
         for k in Sommet_Choisi:
             for A in range(0, len(list(G.values()))):
                 if k==A:
-                    print( list(G.values())[k-1] )
                     Nvoisin = list (G.values())[k-1]
-
             Nvoisin.append(i+3)
 
         print("*******************************************************")
