@@ -33,8 +33,8 @@ def version_standard_avec_pivot(graphe, p, r= set(), x = set(), cliques = []):
       L'ajout du pivot, nous permet de faire moins d'itérations dans la récursion.
       
       Paramètres
-          - pamam1: Une graphe au format liste d'adjacence. 
-          - pamam2: Une ensemble tel que "set(graphe.keys())"
+          - param1: Une graphe G au format liste d'adjacence. 
+          - param2: Une ensemble contenant tous les sommets dans G tel que "p = set(G.keys())"
           - params(optionel) Il faut rien mettre
 
       Renvoyer
