@@ -29,34 +29,16 @@ def version_standard_avec_pivot(graphe, p, r= set(), x = set(), cliques = []):
   return cliques
 
 
-G = {
-        1: [2,3,4],
-        2: [1,3,4,5],
-        3: [1,2,4],
-        4: [1,2,3,5,6],
-        5: [2,4,7],
-        6: [4],
-        7: [5]
-    }
-
-
-G3 = {
-        1: [2,3],
-        2: [1,3,4],
-        3: [1,2],
-        4: [2]
-    }
 
 
 
-# version_standard_Sans_pivot
-test = version_standard_Sans_pivot(G, set(G.keys()))
-print(test)
+#version_standard_Sans_pivot
+#test = version_standard_Sans_pivot(G, set(G.keys()))
+#print(test)
 
-print("*****************************************************")
 
 # version_standard_Avec_pivot
-test_pivot = version_standard_avec_pivot(G, set(G.keys()))
-print(test_pivot)
+#test_pivot = version_standard_avec_pivot(G, set(G.keys()))
+#print(test_pivot)
 
 
