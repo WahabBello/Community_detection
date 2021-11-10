@@ -1,3 +1,7 @@
+""" Voici quelques graphes au format liste d'adjacence 
+    pour tester nos differentes fonctions.
+"""
+
 G = {
         1: [2,3,4],
         2: [1,3,4,5],

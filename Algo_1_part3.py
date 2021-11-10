@@ -5,32 +5,39 @@ def find_All_cliques(G):
 
   #1 : Calculer le k dégénéré et la liste des sommet ordonnée L
   k = degenerescence(G, False, True)
-  L = degenerescence(G, True)
-  print("ordre de dégénérescence k : " + str(k))
-  print("Liste ordonnée des sommets L : " + str(L))
-
 
   #2 : Calculer la liste d'adjacente générée par G
-  print("La liste d'adjacente de G : " + str(G))
+  L = degenerescence(G, True)
+  
   n = len(list (G.keys()) )
-
 
   #3 : Initialiser un dictionnaire vide ABR
   ABR = []
 
-
   for j in range(1,n+1):
-    Nb_Clique = version_ameliore(G)   #les cliques du graphe g
-    #print(Nb_Clique)
 
+    #Les cliques maximales du graphe g
+    Nb_Clique = version_ameliore(G)
 
     for K in Nb_Clique:
-      #print(K)
-
-      #ordonner les sommets de k suivant L
+      
+      #Ordonner les sommets de k suivant L
       if K in ABR:
-
         break;
       else:
           ABR.append(K)
-          return K
+          print(K)
+  
+
+G = {
+        1: [2,3,4],
+        2: [1,3,4,5],
+        3: [1,2,4],
+        4: [1,2,3,5,6],
+        5: [2,4,7],
+        6: [4],
+        7: [5]
+    }
+
+# print(find_All_cliques(G))
+find_All_cliques(G)
