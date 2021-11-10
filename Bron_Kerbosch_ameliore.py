@@ -129,9 +129,3 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
         return sortie
 
 
-
-
-    
-#print(version_ameliore(G))
-
-
