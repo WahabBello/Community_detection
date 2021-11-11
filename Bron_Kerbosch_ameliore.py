@@ -86,7 +86,7 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
     #initialisation
     for i in range(1,max(D.keys())):
         sortie[i]=[]
-
+    
     i=0
 
     while D:
@@ -101,12 +101,15 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
         v=D[i].pop(0)
         
         L.append(v)
+        
         del copie_graphe[v]
+        
+        sortie[k].append(v)
+
         for liste in copie_graphe.values():
             if v in liste:
                 liste.remove(v)
 
-        sortie[k].append(v)
         
         #Recalcul de La distribution des degrées
         D=liste_degrees(copie_graphe)   

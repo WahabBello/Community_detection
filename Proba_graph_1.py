@@ -17,7 +17,7 @@ def Generate_Graph2(n, p):
         else:
             print("pas de lien avec prob : " + str(a))
     print(V)
-    print(E)
+    print(E,"\n")
 
     #Construction du graph avec la bibliothèque networkx
     g = nx.Graph()

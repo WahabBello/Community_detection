@@ -32,7 +32,7 @@ def find_All_cliques_other(G):
                         # else:
                         #     print(K)
                 else:
-                    print(K)
+                    # print(K)
                     continue
                 break
 

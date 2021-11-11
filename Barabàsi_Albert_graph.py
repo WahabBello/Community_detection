@@ -1,7 +1,7 @@
 import random
 
-def Generate_Graph():
-    Vertex = input("Chose numbers of vertex to add : ")
+def Generate_graph_barasi_albert():
+    Vertex = input("Entrer le nombre de sommets à ajouter : ")
     V = int(Vertex) #Nombre de sommets
     G = {   1: [2,3],
             2: [1,3],
