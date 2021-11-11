@@ -153,7 +153,7 @@ while(choix != 10):
 
         if(choix_graphe == 1):
 
-            Clique = enumerer_cliques_v2_v1(G1)
+            Clique = enumerer_cliques_v1(G1)
             print(Clique,"\n")
 
         elif(choix_graphe == 2):
