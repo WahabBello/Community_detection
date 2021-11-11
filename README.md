@@ -1,10 +1,10 @@
-#CONTEXTE : Community_detection
+# CONTEXTE : Community_detection
 
-#SUJET : Détection de communautés dans des réseaux sociaux   
+## SUJET : Détection de communautés dans des réseaux sociaux   
 
-#MOYENS UTILISES : Les Algorithle de graphes
+## MOYENS UTILISES : Les Algorithmes de graphes
 
-#réalisé par :{
+## Ce projet est réalisé par :{
 			DIALLO Abdou
 			KOUASSI Kofié
 			ROUGUI Rania
@@ -13,9 +13,9 @@
 			
 
 
-Notre travail a codé en langage Python et il contient :
+Ce travail a été implementé en langage Python et il comprend 3 parties :
 
-LES FCHIERS  SUIVANT : 
+LES FICHIERS  SUIVANT : 
 
 1. 	Barabàsi_Albert_graph.py
 2. 	Bron_Kerbosch_ameliore.py
@@ -26,12 +26,12 @@ LES FCHIERS  SUIVANT :
 7. 	Proba_graph_1.py
 8. 	Proba_graph_2.py
 9. 	Un ReadMe
-10. 	Ressources
+10. Ressources
 
 
 Nous avons deux modes d'éxécutions :
 
-#	I. PREMIER MODE
+##	I. PREMIER MODE
 
 		1. Vous devez lancer le progrmmane "Main_Principal"
 		2. Vous verrez ensuite un menu qui s'affiche avec les différentes options 
@@ -40,13 +40,13 @@ Nous avons deux modes d'éxécutions :
 		pour les autres programme "Bron_Kerborsh_standard et ameliorer et aussi Ennumeration_Clique_V1 et V2"
 		5. Si vous ne voulez pas en ( 4) votre éxécution du programme utilisera le graphe par defaut G0
 		
-#	II. DEUXIEME MODE
+##	II. DEUXIEME MODE
 	
 		Vous avez la possibilité d'éxécuter chaque programme indépendammant  en décommentant le test que nous avions réalisé
 		
 		Pour le programme "Proba_graph_1", vous devez installer d'abord les bibliothèques matplotlib et networkx pour l'affichage du graphe
 		
-		Pour le programme "Ennumeration_Clique_V1 et V2", vous devez egalement importer le programme "Bron_Kerborsh_ameliorer" afin  
+		Pour le programme "Enumeration_Clique_V1 et V2", vous devez egalement importer le programme "Bron_Kerborsh_ameliorer" afin  
 		d'utiliser  le module "degenerescence"
 		
 		
