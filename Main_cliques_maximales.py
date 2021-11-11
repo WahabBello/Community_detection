@@ -1,10 +1,11 @@
 from Proba_graph_1 import Generate_Graph2, Dessiner_Graphe
 from Proba_graph_2 import Generate_Graph
-from Barabàsi_Albert_graph import Generate_Graph
+# from Barabàsi_Albert_graph import Generate_Graph
 from Barabàsi_Albert_graph import Generate_graph_barasi_albert
 from Bron_Kerbosch_standard import version_standard_sans_pivot
 from Bron_Kerbosch_ameliore import version_ameliore, degenerescence
 from Enumeration_cliques_v1 import Find_Cliques
+from Enumeration_cliques_v2 import enumerer_cliques
 
 
 
@@ -163,23 +164,27 @@ while(choix != 10):
 
         if(choix_graphe == 1):
 
-            Clique = Find_Cliques(G1)
-            print(Clique,"\n")
+            enumerer_cliques(G1)
+            # Clique = enumerer_cliques(G1)
+            # print(Clique,"\n")
 
         elif(choix_graphe == 2):
 
-            Clique = Find_Cliques(G2)
-            print(Clique,"\n")
+            enumerer_cliques(G2)
+            # Clique = enumerer_cliques(G2)
+            # print(Clique,"\n")
 
         elif(choix_graphe ==3):
 
-            Clique = Find_Cliques(G3)
-            print(Clique,"\n")
+            enumerer_cliques(G3)
+            # Clique = enumerer_cliques(G3)
+            # print(Clique,"\n")
 
         else:
 
-            Clique = Find_Cliques(G0)
-            print(Clique,"\n")
+            enumerer_cliques(G0)
+            # Clique = enumerer_cliques(G0)
+            # print(Clique,"\n")
 
     else:
         print("Vous avez Quitté le programme \n")

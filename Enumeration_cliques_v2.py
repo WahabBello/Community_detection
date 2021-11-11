@@ -1,6 +1,6 @@
 from Bron_Kerbosch_ameliore import  *
 
-def find_All_cliques_other(G):
+def enumerer_cliques(G):
 
     n = len(list(G.keys()))
     
@@ -32,19 +32,19 @@ def find_All_cliques_other(G):
                         # else:
                         #     print(K)
                 else:
-                    # print(K)
+                    print(K)
                     continue
                 break
 
-G = {
-        1: [2,3,4],
-        2: [1,3,4,5],
-        3: [1,2,4],
-        4: [1,2,3,5,6],
-        5: [2,4,7],
-        6: [4],
-        7: [5]
-    }
+# G = {
+#         1: [2,3,4],
+#         2: [1,3,4,5],
+#         3: [1,2,4],
+#         4: [1,2,3,5,6],
+#         5: [2,4,7],
+#         6: [4],
+#         7: [5]
+#     }
 
 
-find_All_cliques_other(G)
+# enumerer_cliques(G)
