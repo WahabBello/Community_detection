@@ -9,7 +9,6 @@
 			KOUASSI Kofié
 			ROUGUI Rania
 			SATOURY Maha	
-#		}
 			
 
 
@@ -17,17 +16,32 @@ Ce travail a été implementé en langage Python et il comprend 3 parties :
 
 LES FICHIERS  SUIVANT : 
 
-1. 	Barabàsi_Albert_graph.py
-2. 	Bron_Kerbosch_ameliore.py
-3. 	Bron_Kerbosch_standard.py
-4. 	Enumeration_cliques_v1.py
-5. 	Enumeration_cliques_v2.py
-6.	Main_Princpal.py
-7. 	Proba_graph_1.py
-8. 	Proba_graph_2.py
-9. 	Un ReadMe
-10. Ressources
+## Partie I
 
+	1. 	Proba_graph_1.py
+	2. 	Proba_graph_2.py
+	3.	Barabàsi_Albert_graph.py	
+	
+## Partie II
+
+    	1.	Bron_Kerbosch_ameliore.py
+	2.	Bron_Kerbosch_standard.py
+	
+## Partie III
+
+	1.	Enumeration_cliques_v1.py
+	2.	Enumeration_cliques_v2.py
+	
+## Le Main Principal
+	
+	Main_Princpal.py
+
+## Les ressouces
+	1.	Un ReadMe.txt
+	2.	Ressources.txt
+	3.	Dossier images qui contient des exemples d'exécutions
+	4.	Un lien Github
+	
 
 Nous avons deux modes d'éxécutions :
 
@@ -42,11 +56,12 @@ Nous avons deux modes d'éxécutions :
 		
 ##	II. DEUXIEME MODE
 	
-		Vous avez la possibilité d'éxécuter chaque programme indépendammant  en décommentant le test que nous avions réalisé
+		1. Vous avez la possibilité d'éxécuter chaque programme indépendammant  en décommentant le test que nous avions réalisé
 		
-		Pour le programme "Proba_graph_1", vous devez installer d'abord les bibliothèques matplotlib et networkx pour l'affichage du graphe
+		2. Pour le programme "Proba_graph_1", vous devez installer d'abord les bibliothèques matplotlib et networkx pour l'affichage du
+		graphe
 		
-		Pour le programme "Enumeration_Clique_V1 et V2", vous devez egalement importer le programme "Bron_Kerborsh_ameliorer" afin  
+		3. Pour le programme "Ennumeration_Clique_V1 et V2", vous devez egalement importer le programme "Bron_Kerborsh_ameliorer" afin  
 		d'utiliser  le module "degenerescence"
 		
 		
