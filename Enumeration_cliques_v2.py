@@ -1,6 +1,6 @@
 from Bron_Kerbosch_ameliore import  *
 
-def enumerer_cliques(G):
+def enumerer_cliques_v2(G):
 
     n = len(list(G.keys()))
 

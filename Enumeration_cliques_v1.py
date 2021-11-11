@@ -2,7 +2,7 @@
 from Bron_Kerbosch_ameliore import  *
 
 
-def find_All_cliques(G):
+def enumerer_cliques_v1(G):
 
   #1 : Calculer le k dégénéré et la liste des sommet ordonnée L
   k = degenerescence(G, False, True)
