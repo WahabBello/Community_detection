@@ -89,10 +89,12 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
     #La distribution des degrées
     D=liste_degrees(copie_graphe)
     
-    #initialisation
+    #Initialisation
     for i in range(1,max(D.keys())):
         sortie[i]=[]
     
+    #On initialise le degré courant i à 0
+    #car nous voulons garder la trace de 1-core à k-core.
     i=0
 
     while D:
@@ -139,7 +141,7 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
 
 
 
-
+"""
 G = {
         1: [2,3,4],
         2: [1,3,4,5],
@@ -151,7 +153,8 @@ G = {
     }
     
 
-"""
+
+
 k = degenerescence(G, False, True)
 print("k : " + str(k))
 

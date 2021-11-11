@@ -2,38 +2,46 @@ import random
 
 def Generate_graph_barasi_albert():
     Vertex = input("Entrer le nombre de sommets à ajouter : ")
-    V = int(Vertex) #Nombre de sommets
+
+   #Nombre de sommets
+    V = int(Vertex)
     G = {   1: [2,3],
             2: [1,3],
             3: [1,2]
         }
 
-    m = 2                        #Nombre d'arrete à ajouter pour un sommet donné
+    #Nombre d'arrete à ajouter pour un sommet donné
+    m = 2
 
-    Degre_Init = 6               #Dégré initial
+    #Dégré initial
+    Degre_Init = 6
 
-    List_Degre = [Degre_Init]    #Liste des dégre après ajouté d'un nouveau sommet
+    #Liste des dégres après ajouté d'un nouveau sommet
+    List_Degre = [Degre_Init]
 
     for i in range(1, V+1):
-        List_Des_Sommet = list(G.keys())    #liste des sommets
-        G_temp = {}                         #Graphé_tempo créé après ajouté de sommet
-        Sommet_Choisi = []                  #Liste des sommet choisr pour construire le graphe tem
+        List_Des_Sommet = list(G.keys())
+
+        #Graphe_tempo créé après ajouté de sommet
+        G_temp = {}
+
+        #Liste des sommet choisr pour construire le graphe
+        Sommet_Choisi = []
 
         k = len(List_Degre)-1
 
         for j in range(m):
-
-            choix_sommet = random.choice(List_Des_Sommet)   #Les voisins candidats du nouveau sommet
+            #Les voisins candidats pour former les arretes
+            choix_sommet = random.choice(List_Des_Sommet)
             print("Sommet choisi : " + str(choix_sommet))
             print("Liason  : " + str(i+3) + "--" + str(choix_sommet))
 
-            va = (m)/(List_Degre[k])       #Probabilité de l'apparution de l'arrete
-
+            #Probabilité de l'apparution de l'arrete
+            va = (m)/(List_Degre[k])
             Sommet_Choisi.append(choix_sommet)
-
             List_Des_Sommet.remove(choix_sommet)
+            print("arret  " + str(i+3) + " ajoutées avec proba : " + str(va))
 
-            print("les arrets du sommets " + str(i+3) + " Sont ajoutées avec proba : " + str(va))
             print("****************************************************")
 
         #Mettre à jours la liste des degrés

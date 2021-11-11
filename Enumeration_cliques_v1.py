@@ -1,10 +1,10 @@
-import os
-os.chdir("/home/isko/Bureau/IATIC 4/iatic s7/Outils Algo/Community_detection")
 
 from Bron_Kerbosch_ameliore import  *
 
 
-def enumerer_cliques(G):
+
+def enumerer_cliques_v1(G):
+
 
   #1 : Calculer le k dégénéré et la liste des sommet ordonnée L
   k = degenerescence(G, False, True)

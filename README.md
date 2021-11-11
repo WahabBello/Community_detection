@@ -1,15 +1,15 @@
 #CONTEXTE : Community_detection
 
-#SUJET : Détection de communautés dans des réseaux sociaux   
+##SUJET : Détection de communautés dans des réseaux sociaux   
 
-#MOYENS UTILISES : Les Algorithle de graphes
+##MOYENS UTILISES : Les Algorithle de graphes
 
-#réalisé par :{
+##réalisé par :{
 			DIALLO Abdou
 			KOUASSI Kofié
 			ROUGUI Rania
 			SATOURY Maha	
-#		}
+##		}
 			
 
 
@@ -17,21 +17,36 @@ Notre travail a codé en langage Python et il contient :
 
 LES FCHIERS  SUIVANT : 
 
-1. 	Barabàsi_Albert_graph.py
-2. 	Bron_Kerbosch_ameliore.py
-3. 	Bron_Kerbosch_standard.py
-4. 	Enumeration_cliques_v1.py
-5. 	Enumeration_cliques_v2.py
-6.	Main_Princpal.py
-7. 	Proba_graph_1.py
-8. 	Proba_graph_2.py
-9. 	Un ReadMe
-10. 	Ressources
+## Partie I
 
+	1. 	Proba_graph_1.py
+	2. 	Proba_graph_2.py
+	3.	Barabàsi_Albert_graph.py	
+	
+## Partie II
+
+    	1.	Bron_Kerbosch_ameliore.py
+	2.	Bron_Kerbosch_standard.py
+	
+## Partie III
+
+	1.	Enumeration_cliques_v1.py
+	2.	Enumeration_cliques_v2.py
+	
+## Le Main Principal
+	
+	Main_Princpal.py
+
+## Les ressouces
+	1.	Un ReadMe.txt
+	2.	Ressources.txt
+	3.	Dossier images qui contient des exemples d'exécutions
+	4.	Un lien Github
+	
 
 Nous avons deux modes d'éxécutions :
 
-#	I. PREMIER MODE
+##	I. PREMIER MODE
 
 		1. Vous devez lancer le progrmmane "Main_Principal"
 		2. Vous verrez ensuite un menu qui s'affiche avec les différentes options 
@@ -40,13 +55,14 @@ Nous avons deux modes d'éxécutions :
 		pour les autres programme "Bron_Kerborsh_standard et ameliorer et aussi Ennumeration_Clique_V1 et V2"
 		5. Si vous ne voulez pas en ( 4) votre éxécution du programme utilisera le graphe par defaut G0
 		
-#	II. DEUXIEME MODE
+##	II. DEUXIEME MODE
 	
-		Vous avez la possibilité d'éxécuter chaque programme indépendammant  en décommentant le test que nous avions réalisé
+		1. Vous avez la possibilité d'éxécuter chaque programme indépendammant  en décommentant le test que nous avions réalisé
 		
-		Pour le programme "Proba_graph_1", vous devez installer d'abord les bibliothèques matplotlib et networkx pour l'affichage du graphe
+		2. Pour le programme "Proba_graph_1", vous devez installer d'abord les bibliothèques matplotlib et networkx pour l'affichage du
+		graphe
 		
-		Pour le programme "Ennumeration_Clique_V1 et V2", vous devez egalement importer le programme "Bron_Kerborsh_ameliorer" afin  
+		3. Pour le programme "Ennumeration_Clique_V1 et V2", vous devez egalement importer le programme "Bron_Kerborsh_ameliorer" afin  
 		d'utiliser  le module "degenerescence"
 		
 		
