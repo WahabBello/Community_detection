@@ -33,7 +33,7 @@ def Dessiner_Graphe(G):
     plt.title("Random Graph Generation ")
     plt.show()
 
-#Main
+
 """
 n = 5
 p = 0.3

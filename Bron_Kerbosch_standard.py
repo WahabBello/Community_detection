@@ -1,21 +1,21 @@
-""" Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch. 
-    Le graphe d'entrée est ici au format liste d'adjacence, 
+""" Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch.
+    Le graphe d'entrée est ici au format liste d'adjacence,
     un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs.
 """
 
 def version_standard_sans_pivot(graphe, p, r= set(), x = set(), cliques = []):
   """ Dans cette fonction, nous avons implémenté l'algorithme l'algorithme de Bron-Kerbosch sans un pivot.
-        L'implémentation est basée sur leur pseudocode proposé dans le document du papier [1]. 
-      
+        L'implémentation est basée sur leur pseudocode proposé dans le document du papier [1].
+
       Paramètres
-          - param1: Une graphe au format liste d'adjacence. 
+          - param1: Une graphe au format liste d'adjacence.
           - param2: Une ensemble tel que "set(graphe.keys())"
           - params(optionel) Il faut rien mettre
 
       Renvoyer
           Une liste contenant tous les cliques maximales
   """
-  
+
   if len(p) == 0 and len(x) == 0:
     cliques.append(r)
 
@@ -31,9 +31,9 @@ def version_standard_avec_pivot(graphe, p, r= set(), x = set(), cliques = []):
   """ Dans cette fonction, nous avons implémenté l'algorithme l'algorithme de Bron-Kerbosch avec un pivot.
       L'implémentation est basée sur leur pseudocode proposé dans le document du papier [1].
       L'ajout du pivot, nous permet de faire moins d'itérations dans la récursion.
-      
+
       Paramètres
-          - param1: Une graphe G au format liste d'adjacence. 
+          - param1: Une graphe G au format liste d'adjacence.
           - param2: Une ensemble contenant tous les sommets dans G tel que "p = set(G.keys())"
           - params(optionel) Il faut rien mettre
 
@@ -52,4 +52,20 @@ def version_standard_avec_pivot(graphe, p, r= set(), x = set(), cliques = []):
   return cliques
 
 
+"""
+G = {
+        1: [2,3,4],
+        2: [1,3,4,5],
+        3: [1,2,4],
+        4: [1,2,3,5,6],
+        5: [2,4,7],
+        6: [4],
+        7: [5]
+    }
 
+test_sans_Pivot = version_standard_sans_pivot(G, set(G.keys()))
+print(test_sans_Pivot)
+
+test_avec_Pivot = version_standard_avec_pivot(G, set(G.keys()))
+print(test_avec_Pivot)
+"""

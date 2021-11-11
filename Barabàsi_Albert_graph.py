@@ -59,4 +59,8 @@ def Generate_graph_barasi_albert():
     return G
 
 
-#Complexité : T(n) = n*n
+"""
+G = Generate_graph_barasi_albert()
+print(G)
+
+"""

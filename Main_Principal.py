@@ -1,6 +1,5 @@
 from Proba_graph_1 import Generate_Graph2, Dessiner_Graphe
 from Proba_graph_2 import Generate_Graph
-# from Barabàsi_Albert_graph import Generate_Graph
 from Barabàsi_Albert_graph import Generate_graph_barasi_albert
 from Bron_Kerbosch_standard import version_standard_sans_pivot
 from Bron_Kerbosch_ameliore import version_ameliore, degenerescence
@@ -31,7 +30,7 @@ while(choix != 10):
     #choix doit etre un chiffre
     try:
         choix = int(input("Faites votre choix : "))
-    except ValueError:  
+    except ValueError:
         choix = int(input("Faites votre choix en saisissant un entier: "))
 
 
@@ -55,9 +54,9 @@ while(choix != 10):
 
         try:
             choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
-        except ValueError:  
+        except ValueError:
             choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
-            # choix = int(input("Faites votre choix en saisissant un entier: "))
+            choix = int(input("Faites votre choix en saisissant un entier: "))
 
         if(choix_graphe == 1):
 
@@ -89,7 +88,11 @@ while(choix != 10):
 
     elif(choix == 5):
 
-        choix_graphe = int(input("Choisi un graphe qui été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+        try:
+            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+        except ValueError:
+            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix = int(input("Faites votre choix en saisissant un entier: "))
 
         if(choix_graphe == 1):
 
@@ -114,7 +117,12 @@ while(choix != 10):
 
     elif(choix == 6):
 
-        choix_graphe = int(input("Choisi un graphe qui été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+        try:
+            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+        except ValueError:
+            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix = int(input("Faites votre choix en saisissant un entier: "))
+
         if(choix_graphe == 1):
 
             Cliques = version_ameliore(G1)
@@ -137,7 +145,11 @@ while(choix != 10):
 
     elif(choix == 7):
 
-        choix_graphe = int(input("Choisi un graphe qui été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+        try:
+            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+        except ValueError:
+            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix = int(input("Faites votre choix en saisissant un entier: "))
 
         if(choix_graphe == 1):
 
@@ -160,7 +172,11 @@ while(choix != 10):
 
     elif(choix == 8):
 
-        choix_graphe = int(input("Choisi un graphe qui été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+        try:
+            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+        except ValueError:
+            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix = int(input("Faites votre choix en saisissant un entier: "))
 
         if(choix_graphe == 1):
 

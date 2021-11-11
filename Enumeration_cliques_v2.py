@@ -3,7 +3,7 @@ from Bron_Kerbosch_ameliore import  *
 def enumerer_cliques(G):
 
     n = len(list(G.keys()))
-    
+
     #2 : Calculer la liste d'adjacente générée par G
     L = degenerescence(G,True)
     print("L=",L)
@@ -13,7 +13,7 @@ def enumerer_cliques(G):
 
         #Calcul toutes les cliques
         Nb_Cliques = version_ameliore(G)
-        
+
         # print("Nb_Cliques=",Nb_Cliques)
 
         for K in Nb_Cliques:
@@ -36,15 +36,17 @@ def enumerer_cliques(G):
                     continue
                 break
 
-# G = {
-#         1: [2,3,4],
-#         2: [1,3,4,5],
-#         3: [1,2,4],
-#         4: [1,2,3,5,6],
-#         5: [2,4,7],
-#         6: [4],
-#         7: [5]
-#     }
+"""
+G = {
+        1: [2,3,4],
+        2: [1,3,4,5],
+        3: [1,2,4],
+        4: [1,2,3,5,6],
+        5: [2,4,7],
+        6: [4],
+        7: [5]
+    }
 
 
-# enumerer_cliques(G)
+enumerer_cliques(G)
+"""
