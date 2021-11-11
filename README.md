@@ -1,10 +1,10 @@
-#CONTEXTE : Community_detection
+# CONTEXTE : Community_detection
 
-##SUJET : Détection de communautés dans des réseaux sociaux   
+## SUJET : Détection de communautés dans des réseaux sociaux   
 
-##MOYENS UTILISES : Les Algorithle de graphes
+## MOYENS UTILISES : Les Algorithle de graphes
 
-##réalisé par :{
+## réalisé par : {
 			DIALLO Abdou
 			KOUASSI Kofié
 			ROUGUI Rania
