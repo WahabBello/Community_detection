@@ -1,9 +1,13 @@
+
+import os
+os.chdir("/home/isko/Bureau/IATIC 4/iatic s7/Outils Algo/Community_detection")
+
 from Proba_graph_1 import Generate_Graph2, Dessiner_Graphe
 from Proba_graph_2 import Generate_Graph
 from Barabàsi_Albert_graph import Generate_graph_barasi_albert
 from Bron_Kerbosch_standard import version_standard_sans_pivot
 from Bron_Kerbosch_ameliore import version_ameliore, degenerescence
-from Enumeration_cliques_v1 import Find_Cliques
+from Enumeration_cliques_v1 import enumerer_cliques
 from Enumeration_cliques_v2 import enumerer_cliques
 
 
@@ -53,9 +57,9 @@ while(choix != 10):
     elif(choix == 4):
 
         try:
-            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 | Autre -> G0 : "))
         except ValueError:
-            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 | Autre -> G0 : "))
             choix = int(input("Faites votre choix en saisissant un entier: "))
 
         if(choix_graphe == 1):
@@ -65,12 +69,6 @@ while(choix != 10):
             L = degenerescence(G1,True,False)   #L : liste d'ordre des sommets
             print("L = " + str(L),"\n")
 
-        elif(choix_graphe == 2):
-
-            k = degenerescence(G2,False,True)
-            print("k = " + str(k))
-            L = degenerescence(G2,True,False)
-            print("L = " + str(L),"\n")
 
         elif(choix_graphe == 3):
 
@@ -89,19 +87,14 @@ while(choix != 10):
     elif(choix == 5):
 
         try:
-            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 | Autre -> G0 : "))
         except ValueError:
-            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 | Autre -> G0 : "))
             choix = int(input("Faites votre choix en saisissant un entier: "))
 
         if(choix_graphe == 1):
 
             Cliques = version_standard_sans_pivot(G1,set(G1.keys()))
-            print(Cliques,"\n")
-
-        elif(choix_graphe == 2):
-
-            Cliques = version_standard_sans_pivot(G2,set(G2.keys()))
             print(Cliques,"\n")
 
         elif(choix_graphe == 3):
@@ -118,9 +111,9 @@ while(choix != 10):
     elif(choix == 6):
 
         try:
-            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 | Autre -> G0 : "))
         except ValueError:
-            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 | Autre -> G0 : "))
             choix = int(input("Faites votre choix en saisissant un entier: "))
 
         if(choix_graphe == 1):
@@ -128,12 +121,8 @@ while(choix != 10):
             Cliques = version_ameliore(G1)
             print(Cliques,"\n")
 
-        elif(choix_graphe == 2):
 
-            Cliques = version_ameliore(G2)
-            print(Cliques,"\n")
-
-        elif(choix_graphe ==3):
+        elif(choix_graphe == 3):
 
             Cliques = version_ameliore(G3)
             print(Cliques,"\n")
@@ -146,9 +135,9 @@ while(choix != 10):
     elif(choix == 7):
 
         try:
-            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 | Autre -> G0 : "))
         except ValueError:
-            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 | Autre -> G0 : "))
             choix = int(input("Faites votre choix en saisissant un entier: "))
 
         if(choix_graphe == 1):
@@ -156,12 +145,8 @@ while(choix != 10):
             Clique = Find_Cliques(G1)
             print(Clique,"\n")
 
-        elif(choix_graphe == 2):
 
-            Clique = Find_Cliques(G2)
-            print(Clique,"\n")
-
-        elif(choix_graphe ==3):
+        elif(choix_graphe == 3):
 
             Clique = Find_Cliques(G3)
             print(Clique,"\n")
@@ -173,34 +158,28 @@ while(choix != 10):
     elif(choix == 8):
 
         try:
-            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix_graphe = int(input("Choisissez un graphe qui a été généré : 1-> G1 | 2-> G2 | 3-> G3 | Autre -> G0 : "))
         except ValueError:
-            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 [ Autre -> G0 : "))
+            choix_graphe = int(input("Choisissez un graphe entre 1,2,3 et 0(par défaut) : 1-> G1 | 2-> G2 | 3-> G3 | Autre -> G0 : "))
             choix = int(input("Faites votre choix en saisissant un entier: "))
 
         if(choix_graphe == 1):
 
             enumerer_cliques(G1)
-            # Clique = enumerer_cliques(G1)
-            # print(Clique,"\n")
 
         elif(choix_graphe == 2):
 
             enumerer_cliques(G2)
-            # Clique = enumerer_cliques(G2)
-            # print(Clique,"\n")
 
         elif(choix_graphe ==3):
 
             enumerer_cliques(G3)
-            # Clique = enumerer_cliques(G3)
-            # print(Clique,"\n")
+
 
         else:
 
             enumerer_cliques(G0)
-            # Clique = enumerer_cliques(G0)
-            # print(Clique,"\n")
+
 
     else:
         print("Vous avez Quitté le programme \n")

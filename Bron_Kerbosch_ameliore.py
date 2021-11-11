@@ -1,4 +1,7 @@
-""" Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch dans sa version amelioré.
+
+
+"""
+    Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch dans sa version amelioré.
     Cette version amelioré utilisé l'orde de degenerescence dans le but de potentiellement réduire l'itération.
     Le graphe d'entrée est ici au format liste d'adjacence avec 
     un dict avec des sommets comme clés et des listes de leurs voisins comme valeurs. 
@@ -32,7 +35,8 @@ def version_ameliore_avec_pivot(graphe, r, p, x, cliques):
 
 
 def liste_degrees(graphe):
-    """ Dans cette fonction, nous allons créer un dictionnaire
+    """
+    Dans cette fonction, nous allons créer un dictionnaire
         où la clé est le degré et la valeur est une liste des noeuds ayant ce degré. 
         
         Paramètres
@@ -56,7 +60,9 @@ def liste_degrees(graphe):
 
 
 def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
-    """"Un algorithme proposé par David W. Matula, et Leland L. Beck pour trouver le noyau k d'un graphe.
+    
+    """
+    Un algorithme proposé par David W. Matula, et Leland L. Beck pour trouver le noyau k d'un graphe.
         L'implémentation est basée sur leur pseudocode dans wikipedia intitulé "Degeneracy (graph theory)".
         
         Paramètres
@@ -67,8 +73,8 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
             - (par defaut) Un dictionnaire avec le stockage des sommets regoupé de 1-core à k-core
             - la liste L dans l'ordre de dégénerescence
             - la dégénerescence k                           
-    """
     
+    """
     copie_graphe=copy.deepcopy(graphe)
     
     #k est l'ultime dégénérescence
@@ -133,7 +139,7 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
 
 
 
-"""
+
 G = {
         1: [2,3,4],
         2: [1,3,4,5],
@@ -145,6 +151,7 @@ G = {
     }
     
 
+"""
 k = degenerescence(G, False, True)
 print("k : " + str(k))
 
@@ -152,4 +159,6 @@ L = degenerescence(G, True)
 print("Ordre des sommets : " + str(L))
 
 print(version_ameliore(G))
+
+
 """
