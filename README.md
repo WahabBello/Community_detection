@@ -2,14 +2,13 @@
 
 ## SUJET : Détection de communautés dans des réseaux sociaux   
 
-## MOYENS UTILISES : Les Algorithle de graphes
+## MOYENS UTILISES : Les Algorithme de graphes
 
-## réalisé par : {
+## réalisé par : 
 			DIALLO Abdou
 			KOUASSI Kofié
 			ROUGUI Rania
 			SATOURY Maha	
-##		}
 			
 
 
