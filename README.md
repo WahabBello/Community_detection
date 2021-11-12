@@ -57,7 +57,7 @@ La problématique principale du projet est d’énumérer certaines structures d
 	Main_Princpal.py
 
 
-### Les ressouces
+### LES RESSOURCES
 
 	1. Un ReadMe.txt
 	2. Ressources.txt

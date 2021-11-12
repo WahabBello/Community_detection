@@ -25,8 +25,8 @@ def Generate_Graph2(n, p):
             print("lien avec prob : "  + str(a))
         else:
             print("pas de lien avec prob : " + str(a))
-    print(V)
-    print(E,"\n")
+    print("Sommets =",V)
+    print("Arretes =",E,"\n")
 
     #Construction du graph avec la bibliothèque networkx
     g = nx.Graph()
@@ -36,7 +36,7 @@ def Generate_Graph2(n, p):
     return g
 
 
-    #Dessin du graph avec la bibliothèque matplotlib
+#Dessin du graph avec la bibliothèque matplotlib
 def Dessiner_Graphe(G):
     pos = nx.spring_layout(G)
     nx.draw_networkx(G, pos)

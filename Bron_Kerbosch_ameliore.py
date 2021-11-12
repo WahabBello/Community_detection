@@ -1,5 +1,4 @@
 
-
 """
     Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch dans sa version amelioré.
     Cette version amelioré utilisé l'orde de degenerescence dans le but de potentiellement réduire l'itération.
