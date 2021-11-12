@@ -83,7 +83,7 @@ Nous avons 2 modes d'éxécutions :
 	
 	> Il vous sera demandé ensuite de faire un choix afin de l'exécution du programme souhaité
 	
-	> Vous avez également la possibilité d'utiliser les graphes générés dans les programmes **Proba_graph_1**, **Proba_graph_2** et **Barabasi** pour exécuter les programme **Bron_Kerborsh_standard et ameliorer** et aussi **Ennumeration_Clique_V1 et V2**
+	> Vous avez également la possibilité d'utiliser le graphe généré dans le programme **Barabasi** ou celui de par défaut pour exécuter les programme **Bron_Kerborsh_standard et ameliorer** et aussi **Ennumeration_Clique_V1 et V2**
 	
 	> Sinon l'exécution de ces programmes utilisera le graphe par défaut G0
 	
