@@ -83,7 +83,7 @@ Nous avons 2 modes d'éxécutions :
 	
 	> Il vous sera demandé ensuite de faire un choix afin de l'exécution du programme souhaité
 	
-	> Vous avez également la possibilité d'utiliser le graphe généré dans le programme **Barabasi** ou celui de par défaut pour exécuter les programme **Bron_Kerborsh_standard et ameliorer** et aussi **Ennumeration_Clique_V1 et V2**
+	> Vous avez également la possibilité d'utiliser le graphe généré dans le programme **Barabasi** pour l'exécuter dans les programmes **Bron_Kerborsh_standard et ameliorer** et aussi **Ennumeration_Clique_V1 et V2**
 	
 	> Sinon l'exécution de ces programmes utilisera le graphe par défaut G0
 	
@@ -94,7 +94,7 @@ Nous avons 2 modes d'éxécutions :
 	> Pour le programme **Proba_graph_1**, vous devez installer d'abord les bibliothèques matplotlib et networkx pour l'affichage du
 	graphe
 	
-	> Pour le programme **Ennumeration_Clique_V1 et V2**, vous devez egalement importer le programme **Bron_Kerborsh_ameliorer** afin  
+	> Pour le programme **Enumeration_Clique_V1 et V2**, vous devez egalement importer le programme **Bron_Kerborsh_ameliorer** afin  
 	d'utiliser  le module qui calcule l'ordre de **degenerescence**
 		
 
