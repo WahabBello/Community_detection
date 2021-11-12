@@ -2,15 +2,17 @@
 
 ## SUJET : Détection de communautés dans des réseaux sociaux   
 
-## MOYENS UTILISES : Les Algorithle de graphes
 
-## réalisé par :
+## MOYENS UTILISES : Les Algorithme de graphes
+
+## réalisé par : 
+
 			DIALLO Abdou
 			KOUASSI Kofié
 			ROUGUI Rania
 			SATOURY Maha	
 
-			
+		
 Notre travail a codé en langage Python et il contient :
 
 LES FCHIERS  SUIVANT : 
