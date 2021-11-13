@@ -6,7 +6,7 @@ def enumerer_cliques_v2(G):
 
     #2 : Calculer la liste d'adjacente générée par G
     L = degenerescence(G,True)
-    print("L=",L)
+    # print("L=",L)
 
 
     for j in range(1, n+1):
@@ -14,23 +14,14 @@ def enumerer_cliques_v2(G):
         #Calcul toutes les cliques
         Nb_Cliques = version_ameliore(G)
 
-        # print("Nb_Cliques=",Nb_Cliques)
 
         for K in Nb_Cliques:
-            # print("K",K)
             for x in K:
-                # print("x dans k=",x)
                 for voisin_g in G[x]:
-                # for voisin_g in K:
-                    # print("voisin de x dans K=",voisin_g)
                     if voisin_g in K:
-                    # if voisin_g != x:
-                        # print("voisin de x=",x," dans G est voisin de x dans K, voisin_g=",voisin_g)
-                        if(L.index(voisin_g) <= L.index(x)):
-                            # print("Oui on est voisin dans k et il est inferieur sur le rang de L")
+                        if(L.index(voisin_g) < L.index(x)):
                             break
-                        # else:
-                        #     print(K)
+
                 else:
                     print(K)
                     continue
@@ -48,5 +39,5 @@ G = {
     }
 
 
-enumerer_cliques(G)
+enumerer_cliques_v2(G)
 """

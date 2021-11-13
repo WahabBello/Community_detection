@@ -1,4 +1,4 @@
-Partie 1
+Liens :
 
 https://compucademy.net/generating-random-graphs-in-python/
 https://sparrow.dev/python-combinations/
@@ -8,11 +8,4 @@ https://math.stackexchange.com/questions/3166109/degeneracy-of-graph
 https://iq.opengenus.org/algorithm-to-find-cliques-of-a-given-size-k/
 https://en.wikipedia.org/wiki/Degeneracy_(graph_theory)#Algorithms
 
-
-Partie 2:
-
-Commandes à executer
-python -m pip install -U pip
-python -m pip install -U matplotlib
-python -m pip install -U networkx
 

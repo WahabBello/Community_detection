@@ -1,5 +1,4 @@
 
-
 """
     Trouver toutes les cliques maximales dans un graphe en utilisant l'algorithme de Bron-Kerbosch dans sa version amelioré.
     Cette version amelioré utilisé l'orde de degenerescence dans le but de potentiellement réduire l'itération.
@@ -77,10 +76,10 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
     """
     copie_graphe=copy.deepcopy(graphe)
     
-    #k est l'ultime dégénérescence
+    #k est la dégénérescence
     k=0
     
-    #L'ordre de dégénerescence
+    #L'ordre de dégénerescence des sommets
     L=[]
     
     #Le stockage des sommets par groupe de 1-core à k-core
@@ -94,7 +93,7 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
         sortie[i]=[]
     
     #On initialise le degré courant i à 0
-    #car nous voulons garder la trace de 1-core à k-core.
+    #Car nous voulons garder la trace de 1-core à k-core.
     i=0
 
     while D:
@@ -102,7 +101,7 @@ def degenerescence(graphe,en_ordre=False,avec_degenerescense=False):
         #Le degré minimum dans le graphe actuel
         i=list(D.keys())[0]
                         
-        #la dégénerescence k 
+        #La dégénerescence k 
         k=max(k,i)
         
         #Choisit un sommet avec le degré minimum
