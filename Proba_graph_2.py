@@ -1,7 +1,10 @@
 import random
 
+
 def Generate_Graph():
+
     Vertex = input("Entrer un nombre de sommets supérieur ou égal à 3 : ")
+
 
     #Nombre de sommets
     V = int(Vertex)
@@ -34,7 +37,10 @@ def Generate_Graph():
 
     return Dico
 
+
+
 """
 G = Generate_Graph()
 print(G)
 """
+
