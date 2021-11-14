@@ -15,7 +15,7 @@ La problématique principale du projet est d’énumérer certaines structures d
 - Générerer des graphes aléatoires avec :
 
 	- la probabilité p choisie aléatoirement telle que 0<p<1      	(  [Proba_graph_1.py](https://github.com/WahabBello/Community_detection/blob/main/Proba_graph_1.py) et [Proba_graph_2.py](https://github.com/WahabBello/Community_detection/blob/main/Proba_graph_2.py) )
-	- les graphes de Barabàsi-Albert (Barabàsi_Albert_graph.py)	    
+	- les graphes de Barabàsi-Albert (Barabàsi_Albert_graph.py)	( [Barabàsi_Albert_graph.py](https://github.com/WahabBello/Community_detection/blob/main/Barabàsi_Albert_graph.py) )    
 - L’algorithme de Bron Kerbosch version standard ( [Bron_Kerbosch_standard.py](https://github.com/WahabBello/Community_detection/blob/main/Bron_Kerbosch_standard.py) ) : 
 
 	- version sans pivot  
@@ -59,9 +59,9 @@ La problématique principale du projet est d’énumérer certaines structures d
 
 ### LES RESSOURCES
 
-	1. Un ReadMe.txt
+	1. Un ReadMe.md
 	2. Ressources.txt
-	3. Dossier images qui contient des exemples d'exécutions
+	3. Dossier documents qui contient des exemples d'exécutions et le rapport
 	4. Un lien Github
 		* Le code source du projet
 		* Le ReadMe.md
@@ -81,7 +81,7 @@ Nous avons 2 modes d'éxécutions :
 	
 	> Vous verrez ensuite un menu qui s'affiche avec les différentes options 
 	
-	> Il vous sera demandé ensuite de faire un choix afin de l'exécution du programme souhaité
+	> Il vous sera demandé ensuite de faire un choix afin de l'exécution du programme souhaité (Saissisez des entiers)
 	
 	> Vous avez également la possibilité d'utiliser le graphe généré dans le programme **Barabasi** pour l'exécuter dans les programmes **Bron_Kerborsh_standard et ameliorer** et aussi **Ennumeration_Clique_V1 et V2**
 	
